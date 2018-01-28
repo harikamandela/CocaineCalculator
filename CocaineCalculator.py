@@ -13,7 +13,7 @@ mw_cocaine=339.8 #molecular weight of cocaine
 totalCocaine=0
 
 #Method to determine total cocaine usage and also write cocaine sessions to CSV for tracking purpose
-def cocaineData(ratno,expno,coc_injection,coc_intake) :
+def cocaineDataCSV(ratno,expno,coc_injection,coc_intake) :
     global totalCocaine
     totalCocaine=totalCocaine+coc_intake
     writer.writerow((ratno,expno,coc_injection,coc_intake))
@@ -81,7 +81,7 @@ def calculateCocaine(file) :
                         u15value=i
                         break
                 cocaineIntake=float(weightofrat) * mw_cocaine * float(u15value)
-                cocaineData(ratno,expno,u15value,cocaineIntake)
+                cocaineDataCSV(ratno,expno,u15value,cocaineIntake)
                 break
     f.close()
 
