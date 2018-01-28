@@ -97,6 +97,8 @@ writer.writerow(("Rat no.","Exp no.","Cocaine Injection","Cocaine Intake"))
 
 for file in os.listdir(directory):
 #Skip analyzing files of different type in the directory
+#If the Experiment no is 256, then the generated file has the extension .256
+#Becomes difficult to write a inclusion criteria as the file extensions are different
     if not file.endswith(".xls") and not file.endswith(".py"):
         calculateCocaine(file)
         
