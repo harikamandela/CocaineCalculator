@@ -51,7 +51,7 @@ def calculateCocaine(file) :
             startyear=datetime.strptime(startdate,'%m/%d/%y')
             
         #Calculate cocaine consumption only for experiments in the specified year
-        if startyear.year>=year:
+        if startyear.year==year:
             #Extract the weight of rat
             if line.startswith('W:') :
                 weightrow=line.split(':')
